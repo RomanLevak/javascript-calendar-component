@@ -1,1 +1,1 @@
-let calendar = new Calendar('calendar-wrap')
+const calendar = new Calendar('calendar-wrap')
