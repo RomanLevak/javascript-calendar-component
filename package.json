@@ -1,13 +1,29 @@
 {
-  "name": "",
-  "version": "",
+  "name": "calendar",
   "dependencies": {
-    "browser-sync": "^2.24.6",
-    "gulp": "^3.9.1",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
-    "gulp-clean-css": "^3.9.4",
+    "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
     "gulp-less": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4"
-  }
+  },
+  "description": "to run project you can simply open an index.html file\r \tor\r install all dependencies and run gulp to start",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhijithvijayan/pure-javascript-calendar-component.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhijithvijayan/pure-javascript-calendar-component/issues"
+  },
+  "homepage": "https://github.com/abhijithvijayan/pure-javascript-calendar-component#readme"
 }
