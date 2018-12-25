@@ -7,7 +7,7 @@ const cleanCss = require("gulp-clean-css");
 const browserSync = require("browser-sync").create();
 
 gulp.task("less", () => {
-  gulp
+  return gulp
     .src("./styles/*.less")
     .pipe(sourcemaps.init())
     .pipe(autoprefixer())
@@ -16,7 +16,7 @@ gulp.task("less", () => {
     .pipe(cleanCss())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("styles"))
-	.pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 });
 
 gulp.task("serve", () => {
@@ -26,9 +26,7 @@ gulp.task("serve", () => {
     }
   });
   gulp.watch("./styles/*.less", gulp.series("less"));
-  gulp.watch("./index.html").on('change', () => {
-	browserSync.reload();
-  });
+  gulp.watch("./index.html").on("change", browserSync.reload);
 });
 
-gulp.task('default', gulp.series(gulp.parallel('less', 'serve'), function () {}))
+gulp.task("default", gulp.series(gulp.parallel("less", "serve")));

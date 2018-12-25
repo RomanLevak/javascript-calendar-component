@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abhijithvijayan/pure-javascript-calendar-component.git"
+    "url": "git+https://github.com/RomanLevak/pure-javascript-calendar-component.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/abhijithvijayan/pure-javascript-calendar-component/issues"
+    "url": "https://github.com/RomanLevak/pure-javascript-calendar-component/issues"
   },
-  "homepage": "https://github.com/abhijithvijayan/pure-javascript-calendar-component#readme"
+  "homepage": "https://github.com/RomanLevak/pure-javascript-calendar-component#readme"
 }
