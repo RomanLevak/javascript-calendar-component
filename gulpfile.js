@@ -1,32 +1,35 @@
-const gulp = require('gulp')
-const less = require('gulp-less')
-const concat = require('gulp-concat')
-const sourcemaps = require('gulp-sourcemaps')
-const autoprefixer = require('gulp-autoprefixer')
-const cleanCss = require('gulp-clean-css')
-const browserSync = require('browser-sync').create()
+const
+    gulp         = require('gulp'),
+    less         = require('gulp-less'),
+    concat       = require('gulp-concat'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cleanCss     = require('gulp-clean-css'),
+    browserSync  = require('browser-sync').create(),
+    rename       = require('gulp-rename')
 
 gulp.task('less', () =>
-	gulp
-		.src('./styles/*.less')
-		.pipe(sourcemaps.init())
-		.pipe(autoprefixer())
-		.pipe(less())
-		.pipe(concat('calendar.css'))
-		.pipe(cleanCss())
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest('styles'))
-		.pipe(browserSync.stream())
+    gulp
+        .src('./less/index.less')
+        .pipe(autoprefixer())
+        .pipe(less())
+        .pipe(concat('bundle.css'))
+        .pipe(gulp.dest('./public/styles/css'))
+        .pipe(cleanCss())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('./public/styles/css'))
+        .pipe(browserSync.stream())
 )
 
 gulp.task('serve', () => {
-	browserSync.init({
-		server: {
-			baseDir: './'
-		}
-	})
-	gulp.watch('./styles/*.less', ['less'])
-	gulp.watch('./index.html').on('change', browserSync.reload)
+    browserSync.init({
+        server: {
+            baseDir: './public/'
+        },
+        open: false
+    })
+
+    gulp.watch('./less/**/*.less', ['less'])
+    gulp.watch('./public/index.html').on('change', browserSync.reload)
 })
 
 gulp.task('default', ['less', 'serve'])

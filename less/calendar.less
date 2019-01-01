@@ -1,0 +1,100 @@
+.calendar {
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	user-select: none;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	background-color: @background;
+	color: @text;
+	border: 3px solid @border;
+	border-radius: 23px;
+}
+
+.calendar{
+	//	--HEAD--
+	&__head {
+		width: 100%;
+		height: 21%;
+		text-align: center;
+		
+		box-sizing: border-box;
+		cursor: default;
+		&-text {
+			font-size: 22px;
+		}
+		&-days {
+			width: 100%;
+			text-decoration: none;
+			&-item {
+				position: relative;
+			}			
+			&-item:after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: calc(100% - 2px);
+				top: 50%;
+				margin-top: -10px;
+				width: 2px;
+				height: 20px;
+				background-color: @selected-item;
+			}			
+			&-item:last-child:after {
+				display: none;
+			}
+		}
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 2%;
+	}
+	
+	&__btn {
+		cursor: pointer;
+		font-size: 27px;
+	}
+	//--BODY--
+	&__body {
+		width: 100%;
+		height: 79%;
+		border-spacing: 4px 3px;
+		padding: 3px 0;
+		text-align: center;
+	}
+	&-cell {
+		margin-left: 10px;
+		border-radius: 20%;
+		cursor: pointer;
+		transition: box-shadow 0.22s ease-in;
+		&:hover {
+			box-shadow: inset 0px 0px 0px 2px @shadow;
+		}
+		
+		&-selected {
+			border-radius: 9px;
+			background: @selected-item;
+			&.calendar-cell-today{
+				box-shadow: inset 0px 0px 0px 2px @shadow;
+			}
+		}
+		
+		&-gray {
+			color: @gray;
+			cursor: default;
+			&:hover {
+				box-shadow: none;
+			}
+		}
+				
+		&-green {
+			color: @green;
+		}
+		
+		&-today {
+			background-color: @gray;
+		}
+	}	
+}

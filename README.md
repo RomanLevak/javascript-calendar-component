@@ -1,10 +1,8 @@
-
-to run project you can simply open an index.html file
-	or
-install all dependencies and run gulp to start
-
-    >npm install
-    >gulp
+to open the calendar just open the ./public/index.html file
+	
+	or type
+	    >npm install
+	    >npm start
 
 server will be working on port 3000
 
